@@ -1,12 +1,8 @@
-const mysql = require('mysql');
+const mysqlModel = require('mysql-model');
+const connection = require('../index');
 
-const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'ifsorridente',
+const ConsultaModel = connection.extend({
+    tableName: 'consultas',
 });
 
-connection.connect();
-
-module.exports = connection;
+module.exports = ConsultaModel;
