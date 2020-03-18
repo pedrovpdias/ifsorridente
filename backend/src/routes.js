@@ -1,10 +1,8 @@
 const { Router } = require('express');
-
+const ConsultaController = require('./controllers/ConsultaController');
 
 const routes = Router();
 
-routes.get('/', (request, response) => {
-    return response.json({message: 'Hello World'});
-});
+routes.get('/admin', ConsultaController.index);
 
 module.exports = routes;
