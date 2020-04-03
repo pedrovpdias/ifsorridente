@@ -4,12 +4,14 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/index.js"
+    "start": "nodemon src/index.js"
   },
   "dependencies": {
     "circular-json": "^0.5.9",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
-    "mysql": "^2.18.1",
+    "knex": "^0.20.13",
+    "mysql": "github:mysqljs/mysql",
     "mysql-model": "0.0.3"
   },
   "devDependencies": {

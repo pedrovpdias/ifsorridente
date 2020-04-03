@@ -1,12 +1,8 @@
-const Consulta = require('../models/Consulta');
+const connection = require('../database/connection');
 
 module.exports = {
-    async index(request, response) {
-        const consultas = await Consulta.query("SELECT * FROM consultas",() => {
-            if(consultas){
-                console.log(consultas);
-            }
-            return response.json(consultas._results);
-        });       
+    async index(request, response){
+        const consultas = await connection('consultas').select('*');
+        return response.json(consultas);
     }
 }
